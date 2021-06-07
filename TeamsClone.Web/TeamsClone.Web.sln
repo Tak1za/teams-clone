@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsClone.Web", "TeamsClon
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsClone.WeatherForecast", "TeamsClone.Weather\TeamsClone.WeatherForecast.csproj", "{B2FEA2B2-805F-4662-95A1-67A8127E17F0}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TeamsClone.Users", "TeamsClone.Users\TeamsClone.Users.csproj", "{E6868B30-0FE3-4B96-8C5E-E6011E3C81C9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B2FEA2B2-805F-4662-95A1-67A8127E17F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2FEA2B2-805F-4662-95A1-67A8127E17F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2FEA2B2-805F-4662-95A1-67A8127E17F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6868B30-0FE3-4B96-8C5E-E6011E3C81C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6868B30-0FE3-4B96-8C5E-E6011E3C81C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6868B30-0FE3-4B96-8C5E-E6011E3C81C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6868B30-0FE3-4B96-8C5E-E6011E3C81C9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

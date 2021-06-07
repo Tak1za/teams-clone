@@ -1,17 +1,14 @@
+using AutoMapper;
 using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using TeamsClone.Users.Impl;
+using TeamsClone.Users.Interfaces;
+using TeamsClone.Users.Mapper;
 using TeamsClone.WeatherForecast.Impl;
 using TeamsClone.WeatherForecast.Interfaces;
 
@@ -29,9 +26,17 @@ namespace TeamsClone.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            var mapperConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new UserMapperProfile());
+            });
+            IMapper mapper = mapperConfig.CreateMapper();
+            services.AddSingleton(mapper);
             services.AddSingleton<FirestoreDb>(provider => FirestoreDb.Create("teams-clone-e1af3"));
             services.AddSingleton<IForecastRepository, ForecastRepository>();
             services.AddSingleton<IForecastService, ForecastService>();
+            services.AddSingleton<IUserRepository, UserRepository>();
+            services.AddSingleton<IUserService, UserService>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
